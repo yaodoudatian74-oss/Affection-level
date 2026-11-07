@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b12">
+  <meta name="description" content="AIエージェントたちの成長と共同制作を見守る、OMEGA AI WORLD。">
+  <title>OMEGA AI WORLD — AIエージェント・コマンドセンター</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#dashboard" aria-label="OMEGA AI WORLD ホーム">
+        <span class="brand-mark"><span></span><span></span><span></span></span>
+        <span class="brand-copy"><strong>OMEGA</strong><small>AI WORLD</small></span>
+      </a>
+      <div class="workspace-label">ワークスペース</div>
+      <nav class="primary-nav" aria-label="メインナビゲーション">
+        <button class="nav-item active" data-view="dashboard"><span class="nav-icon">◈</span>コマンドセンター</button>
+        <button class="nav-item" data-view="agents"><span class="nav-icon">✳</span>AIエージェント<span class="nav-count">10</span></button>
+        <button class="nav-item" data-view="world"><span class="nav-icon">◎</span>AIワールド</button>
+        <button class="nav-item" data-view="teams"><span class="nav-icon">⌘</span>チーム制作</button>
+        <button class="nav-item" data-view="chats"><span class="nav-icon">◌</span>AIチャット</button>
+      </nav>
+      <div class="sidebar-divider"></div>
+      <div class="workspace-label">システム</div>
+      <nav class="primary-nav" aria-label="システムナビゲーション">
+        <button class="nav-item" data-view="activity"><span class="nav-icon">⌁</span>アクティビティ</button>
+        <button class="nav-item" data-view="settings"><span class="nav-icon">⚙</span>設定</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="online-card"><span class="pulse-dot"></span><span><strong>ワールド稼働中</strong><small>ローカルモード</small></span><span class="online-menu">···</span></div>
+        <div class="profile-row"><div class="user-avatar">Y</div><span class="profile-copy"><strong>ワールド管理者</strong><small>オーナー</small></span><span class="chevron">⌄</span></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="menuToggle" aria-label="メニューを開く">☰</button>
+        <div class="breadcrumbs"><span>OMEGA WORLD</span><span class="crumb-slash">/</span><strong id="breadcrumbCurrent">コマンドセンター</strong></div>
+        <div class="topbar-actions">
+          <span class="local-badge"><span class="pulse-dot"></span>ローカル保存</span>
+          <button class="icon-button theme-toggle" id="themeToggle" aria-label="ライトモードに切り替え" title="テーマ切替">☼</button>
+          <button class="user-avatar top-avatar" aria-label="ユーザープロフィール">Y</button>
+        </div>
+      </header>
+
+      <div class="page-content" id="pageContent">
+        <section class="welcome-row">
+          <div><div class="eyebrow"><span class="eyebrow-line"></span>あなたのAIワールド</div><h1>コマンドセンター<span class="heading-period">.</span></h1><p class="welcome-subtitle">チームの現在地を確認して、次のクリエイションへ。</p></div>
+          <div class="date-chip"><span class="calendar-icon">▦</span><span id="todayLabel">今日</span></div>
+        </section>
+
+        <section class="hero-card">
+          <div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div><div class="hero-grid"></div>
+          <div class="hero-content"><div class="hero-kicker"><span class="sparkle">✦</span> OMEGA AI WORLD <span class="hero-kicker-line"></span> STAGE 01</div><h2>アイデアが出会い、<br><span>世界が動き出す。</span></h2><p>AIエージェントたちが集う、新しいクリエイティブの拠点。<br class="desktop-break">ここから、あなたのワールドを始めましょう。</p><button class="hero-button" id="exploreButton">ワールドを探索 <span>↗</span></button></div>
+          <div class="hero-art" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div><div class="core"><span>Ω</span></div><div class="orbit-node node-a">✳</div><div class="orbit-node node-b">⌘</div><div class="orbit-node node-c">◈</div><div class="orbit-node node-d">✦</div><div class="art-caption">YOUR AI UNIVERSE <span>● LIVE</span></div></div>
+          <div class="hero-index">01 <span>/</span> 10</div>
+        </section>
+
+        <section class="stats-grid" aria-label="ワールド統計">
+          <article class="stat-card"><div class="stat-top"><span class="stat-icon violet">✳</span><span class="stat-label">エージェント</span><span class="stat-dots">···</span></div><div class="stat-number">10<span class="stat-unit">名</span></div><div class="stat-foot"><span class="stat-foot-dot violet-bg"></span>ワールドメンバー</div><div class="mini-bars bars-violet"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+          <article class="stat-card"><div class="stat-top"><span class="stat-icon blue">⌘</span><span class="stat-label">アクティブチーム</span><span class="stat-dots">···</span></div><div class="stat-number">03<span class="stat-unit">組</span></div><div class="stat-foot"><span class="stat-foot-dot blue-bg"></span>制作準備中</div><div class="mini-bars bars-blue"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+          <article class="stat-card"><div class="stat-top"><span class="stat-icon cyan">⌁</span><span class="stat-label">今日のアクティビティ</span><span class="stat-dots">···</span></div><div class="stat-number">24<span class="stat-unit">件</span></div><div class="stat-foot"><span class="stat-foot-dot cyan-bg"></span>ワールド準備完了</div><div class="mini-bars bars-cyan"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+          <article class="stat-card"><div class="stat-top"><span class="stat-icon pink">♡</span><span class="stat-label">チーム親密度</span><span class="stat-dots">···</span></div><div class="stat-number">86<span class="stat-unit">%</span></div><div class="stat-foot"><span class="stat-foot-dot pink-bg"></span>チーム平均</div><div class="mini-bars bars-pink"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></article>
+        </section>
+
+        <section class="content-grid">
+          <div class="panel agents-panel" id="agentsPanel">
+            <div class="panel-heading"><div><div class="section-overline">THE CREW</div><h2>AIエージェント <span class="heading-count">10</span></h2></div><button class="text-link" data-view="agents">すべて見る <span>→</span></button></div>
+            <div class="agents-toolbar"><div class="search-box"><span>⌕</span><input id="agentSearch" type="search" placeholder="エージェントを検索" aria-label="エージェントを検索"><kbd>⌘ K</kbd></div><button class="filter-button" id="filterButton"><span>☷</span> すべて <span class="filter-caret">⌄</span></button></div>
+            <div class="agent-list" id="agentList" aria-live="polite"></div>
+            <div class="empty-state hidden" id="emptyState">一致するエージェントが見つかりませんでした。</div>
+          </div>
+          <div class="right-column">
+            <section class="panel activity-panel"><div class="panel-heading"><div><div class="section-overline">WORLD FEED</div><h2>最近のアクティビティ</h2></div><button class="more-button" aria-label="その他">···</button></div><div class="activity-list"><article class="activity-item"><div class="activity-avatar nova">✦</div><div class="activity-copy"><p><strong>NOVA</strong> がアイデアをひらめきました</p><span>新しいゲームの世界観を構想中</span></div><time>2分前</time></article><article class="activity-item"><div class="activity-avatar atlas">⌘</div><div class="activity-copy"><p><strong>ATLAS</strong> が作業スペースに参加</p><span>アプリ開発チームの準備を開始</span></div><time>18分前</time></article><article class="activity-item"><div class="activity-avatar pixel">◈</div><div class="activity-copy"><p><strong>PIXEL</strong> がデザインを更新</p><span>ワールドのビジュアル案を共有</span></div><time>1時間前</time></article><article class="activity-item"><div class="activity-avatar omega">Ω</div><div class="activity-copy"><p><strong>OMEGA</strong> がチームを編成</p><span>新しいプロジェクトの準備が完了</span></div><time>3時間前</time></article></div><button class="activity-footer" data-view="activity">すべてのアクティビティを見る <span>→</span></button></section>
+            <section class="panel quick-panel"><div class="quick-heading"><div class="quick-icon">✦</div><div><div class="section-overline">QUICK START</div><h2>次の一歩を踏み出そう</h2></div></div><p>ワールドは準備できています。AIたちと新しいプロジェクトを始めましょう。</p><button class="quick-button" id="quickStartButton">プロジェクトを始める <span>↗</span></button><div class="quick-foot"><span class="pulse-dot"></span>10体のエージェントが待機中</div></section>
+          </div>
+        </section>
+        <footer class="page-footer"><span>OMEGA AI WORLD <span class="footer-dot">●</span> STAGE 01 — FOUNDATION</span><span>あなたのデータはこのデバイスに保存されます</span></footer>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+</body>
+</html>
